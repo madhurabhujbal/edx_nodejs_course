@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 //middleware function: it is function with 3 arguments: (req, res, next)
 app.use((req, res, next) =>{
@@ -28,7 +30,8 @@ app.get('/accounts', (req, res, next) => { //this is called inline middleware
     res.send({msg : 'accounts'});
 });
 
-app.get('/transactions', (req, res) =>{
+app.post('/transactions', (req, res) =>{
+    console.log(req.body);
     res.send({msg : 'transactions'});
 });
 
