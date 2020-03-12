@@ -7,6 +7,14 @@ app.use((req, res, next) =>{
     next();
 });
 
+app.use((req, res, next) =>{
+    if (req.query.api_key){
+        next();
+    }else{
+        res.status(401).send({msg : 'Not Authorized'});
+    }
+});
+
 app.get('/', (req, res) =>{
     res.send({msg : 'hello world!!'});
 });
