@@ -19,7 +19,12 @@ app.get('/', (req, res) =>{
     res.send({msg : 'hello world!!'});
 });
 
-app.get('/accounts', (req, res) =>{
+app.get('/accounts', (req, res, next) => { //this is called inline middleware
+    console.log('accounts inline middleware');
+    next();
+},
+
+(req, res) =>{
     res.send({msg : 'accounts'});
 });
 
