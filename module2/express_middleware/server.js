@@ -21,7 +21,7 @@ app.get('/', (req, res) =>{
 
 app.get('/accounts', (req, res, next) => { //this is called inline middleware
     console.log('accounts inline middleware');
-    next();
+    next(new Error('Oops!!'));
 },
 
 (req, res) =>{
@@ -32,4 +32,7 @@ app.get('/transactions', (req, res) =>{
     res.send({msg : 'transactions'});
 });
 
+app.use((error, req, res, next) => {
+    res.status(500).send(error);
+});
 app.listen(3000);
