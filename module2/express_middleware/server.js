@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 //middleware function: it is function with 3 arguments: (req, res, next)
 app.use((req, res, next) =>{
