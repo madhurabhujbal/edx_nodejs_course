@@ -6,6 +6,10 @@ if (process.argv.length < 3){
 }
 
 let filename = process.argv[2];
+if (!fs.existsSync(filename)){
+    console.log('File ' + filename + ' does not exist');
+    return 2;
+}
 let inputData = fs.readFileSync(filename, 'utf-8');
 let splitWords = inputData.split('|');
 
