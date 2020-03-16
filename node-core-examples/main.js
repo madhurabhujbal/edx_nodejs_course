@@ -1,8 +1,8 @@
 var fs = require('fs');
 
-var file = fs.readFileSync('mini-input.dat', 'utf-8');
+var inputData = fs.readFileSync('mini-input.dat', 'utf-8');
 //console.log(file);
-var splitWords = file.split('|');
+var splitWords = inputData.split('|');
 //console.log(splitWords);
 
 var firstWord = splitWords[0];
