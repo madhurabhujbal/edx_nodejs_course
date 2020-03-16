@@ -1,12 +1,13 @@
 var fs = require('fs');
 
-var inputData = fs.readFileSync('mini-input.dat', 'utf-8');
+let inputData = fs.readFileSync('mini-input.dat', 'utf-8');
 //console.log(file);
-var splitWords = inputData.split('|');
+let splitWords = inputData.split('|');
 //console.log(splitWords);
 
-var firstWord = splitWords[0];
-//console.log(firstWord);
-splitfw = firstWord[0].toUpperCase() + firstWord.slice(1);
-console.log(splitfw);
-
+for ( i=0; i<splitWords.length-1; i++) {
+    let currentWord = splitWords[i];
+    //console.log(firstWord);
+    let changedWord = currentWord[0].toUpperCase() + currentWord.slice(1);
+    console.log(changedWord);
+}
