@@ -1,5 +1,10 @@
 var fs = require('fs');
 
+if (process.argv.length < 3){
+    console.log('Please provide filename to process');
+    return 1;
+}
+
 let filename = process.argv[2];
 let inputData = fs.readFileSync(filename, 'utf-8');
 let splitWords = inputData.split('|');
