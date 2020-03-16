@@ -9,5 +9,5 @@ for ( i=0; i<splitWords.length-1; i++) {
     var changedWord = currentWord[0].toUpperCase() + currentWord.slice(1);
     result = result + changedWord + '|';
 }
-
+result = result.slice( 0, result.length - 1 );
 console.log(result);
