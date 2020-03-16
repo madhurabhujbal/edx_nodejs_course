@@ -1,4 +1,4 @@
-const modFile = require('./module');
+const modFile = require('./exports-module/module');
 
 console.log(`Welcome message : ${modFile.exhello()}`);
 
