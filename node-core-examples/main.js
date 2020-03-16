@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-let filename = 'mini-input.dat';
+let filename = process.argv[2];
 let inputData = fs.readFileSync(filename, 'utf-8');
 let splitWords = inputData.split('|');
 
