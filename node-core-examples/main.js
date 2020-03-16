@@ -1,6 +1,7 @@
 var fs = require('fs');
 
-let inputData = fs.readFileSync('mini-input.dat', 'utf-8');
+let filename = 'mini-input.dat';
+let inputData = fs.readFileSync(filename, 'utf-8');
 let splitWords = inputData.split('|');
 
 let result = '';
@@ -10,4 +11,5 @@ for ( i=0; i<splitWords.length-1; i++) {
     result = result + changedWord + '|';
 }
 result = result.slice(0, result.length - 1);
-fs.writeFileSync('output.dat', result);
+let outputFile = filename.split('.')[0] + '.out';
+fs.writeFileSync(outputFile, result);
